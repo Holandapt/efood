@@ -19,4 +19,12 @@ export const GlobalCss = createGlobalStyle`
     width: 100%;
     margin: 0 auto;
   }
+
+  @media screen and (max-width: 1024px) {
+    .container {
+      max-width: 90%;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
 `

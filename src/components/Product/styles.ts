@@ -8,7 +8,8 @@ export const Card = styled.div`
   position: relative;
 
   img {
-    display: block;
+    max-width: 100%;
+    height: auto;
   }
 `
 export const Container = styled.div`

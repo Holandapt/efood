@@ -2,12 +2,13 @@ import styled from 'styled-components'
 import { Cores } from '../../styles'
 
 export const Fundo = styled.div`
-  width: 100%;
+  max-width: 100%;
   height: 384px;
   text-align: center;
 
   .container {
     width: 539px;
+    max-width: 100%;
     height: 84px;
   }
 `
