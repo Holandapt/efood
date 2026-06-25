@@ -21,7 +21,7 @@
     "react-hooks/exhaustive-deps": "warn",
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
-    "no-empty": "off",
+    "@typescript-eslint/no-empty-function": "off",
     "json/no-empty-keys": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off"
   },
