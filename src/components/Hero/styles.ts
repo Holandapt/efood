@@ -17,7 +17,6 @@ export const Logo = styled.img`
   margin-top: 40px;
   margin-bottom: 150px;
 `
-export const Container = styled.div``
 
 export const Subtitulo = styled.h2`
   font-size: 36px;

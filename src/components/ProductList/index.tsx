@@ -1,24 +1,55 @@
 import Product from '../Product'
+import pizza from '../../assets/images/Pizza.png'
 import { List } from './styles'
-import Restaurante from '../../models/Restaurantes'
 
-export type Props = {
-  restaurantes: Restaurante[]
-}
-
-const ProductList = ({ restaurantes }: Props) => (
+const ProductList = () => (
   <div className="container">
     <List>
-      {restaurantes.map((restaurante) => (
-        <Product
-          key={restaurante.id}
-          nota={restaurante.nota}
-          Title={restaurante.title}
-          descricao={restaurante.description}
-          infos={restaurante.infos}
-          image={restaurante.image}
-        />
-      ))}
+      <Product
+        Title="Pizza marguerita"
+        descricao="A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!"
+        image={pizza}
+      />
+      <Product
+        Title="Pizza marguerita"
+        descricao="A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!"
+        image={pizza}
+      />
+      <Product
+        Title="Pizza marguerita"
+        descricao="A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!"
+        image={pizza}
+      />
+      <Product
+        Title="Pizza marguerita"
+        descricao="A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!"
+        image={pizza}
+      />
+      <Product
+        Title="Pizza marguerita"
+        descricao="A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!"
+        image={pizza}
+      />
+      <Product
+        Title="Pizza marguerita"
+        descricao="A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!"
+        image={pizza}
+      />
+      <Product
+        Title="Pizza marguerita"
+        descricao="A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!"
+        image={pizza}
+      />
+      <Product
+        Title="Pizza marguerita"
+        descricao="A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!"
+        image={pizza}
+      />
+      <Product
+        Title="Pizza marguerita"
+        descricao="A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!"
+        image={pizza}
+      />
     </List>
   </div>
 )

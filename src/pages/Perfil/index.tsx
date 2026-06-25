@@ -1,10 +1,10 @@
-import Hero from '../../components/Hero'
-
 import Restaurante from '../../models/Restaurantes'
 import Sushi from '../../assets/images/Hioki Sushi.png'
 import Italiano from '../../assets/images/LaDolceVita.png'
 import Footer from '../../components/Footer'
-import RestaurantList from '../../components/RestaurantList'
+import Header from '../../components/Header'
+import Presentation from '../../components/Presentation'
+import ProductList from '../../components/ProductList'
 
 const Restaurantes: Restaurante[] = [
   {
@@ -63,12 +63,13 @@ const Restaurantes: Restaurante[] = [
   }
 ]
 
-const Home = () => (
+const Perfil = () => (
   <>
-    <Hero />
-    <RestaurantList restaurantes={Restaurantes} />
+    <Header />
+    <Presentation />
+    <ProductList />
     <Footer />
   </>
 )
 
-export default Home
+export default Perfil
