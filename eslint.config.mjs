@@ -10,9 +10,7 @@ export default defineConfig([
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     plugins: { js, reacthooks: reactHooks },
     rules: {
-      ...reactHooks.configs.recommended.rules,
-      'no-empty-function': 'off',
-      '@typescript-eslint/no-empty-function': 'error'
+      ...reactHooks.configs.recommended.rules
     },
     extends: ['js/recommended', 'react-app'],
     languageOptions: { globals: globals.browser },

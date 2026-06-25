@@ -1,4 +1,4 @@
-import { Fundo, Logo, Subtitulo, Container } from './styles'
+import { Fundo, Logo, Subtitulo } from './styles'
 import imgFundo from '../../assets/images/fundo.png'
 import logo from '../../assets/images/logo.png'
 
