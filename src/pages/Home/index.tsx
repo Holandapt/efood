@@ -1,5 +1,4 @@
 import Hero from '../../components/Hero'
-
 import Restaurante from '../../models/Restaurantes'
 import Sushi from '../../assets/images/Hioki Sushi.png'
 import Italiano from '../../assets/images/LaDolceVita.png'
