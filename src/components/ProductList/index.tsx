@@ -1,5 +1,4 @@
 import Product from '../Product'
-import pizza from '../../assets/images/Pizza.png'
 import { List } from './styles'
 import Products from '../../models/Products'
 
