@@ -1,7 +1,6 @@
 import Button from '../Button'
 import Tag from '../Tag'
 import estrela from '../../assets/images/nota.png'
-
 import {
   Card,
   Container,
@@ -10,10 +9,12 @@ import {
   Infos,
   CardHeader,
   Ponto,
-  Nota
+  Nota,
+  Capa
 } from './styles'
 
 type Props = {
+  id: number
   Title: string
   image: string
   descricao: string
@@ -21,34 +22,36 @@ type Props = {
   nota: string
 }
 
-const Restaurant = ({ Title, image, descricao, infos, nota }: Props) => (
-  <Card>
-    <div className="container">
-      <img src={image} alt={Title} />
-      <Container>
-        <CardHeader>
-          <Titulo>{Title}</Titulo>
-          <Ponto>
-            <Nota>{nota}</Nota>
-            <img src={estrela} alt="" />
-          </Ponto>
-        </CardHeader>
-        <Infos>
-          {infos.map((info) => (
-            <Tag key={info}>{info}</Tag>
-          ))}
-        </Infos>
-        <Descricao>{descricao}</Descricao>
-        <Button
-          type="link"
-          title="Saiba mais sobre esse restaurante"
-          to="/Perfil"
-        >
-          Saiba mais
-        </Button>
-      </Container>
-    </div>
-  </Card>
-)
+const Restaurant = ({ Title, image, descricao, infos, nota, id }: Props) => {
+  return (
+    <Card key={id}>
+      <div className="container">
+        <Capa src={image} alt={Title} />
+        <Container>
+          <CardHeader>
+            <Titulo>{Title}</Titulo>
+            <Ponto>
+              <Nota>{nota}</Nota>
+              <img src={estrela} alt="" />
+            </Ponto>
+          </CardHeader>
+          <Infos>
+            {infos.map((info) => (
+              <Tag key={info}>{info}</Tag>
+            ))}
+          </Infos>
+          <Descricao>{descricao}</Descricao>
+          <Button
+            type="link"
+            title="Saiba mais sobre esse restaurante"
+            to={`/Perfil/${id}`}
+          >
+            Saiba mais
+          </Button>
+        </Container>
+      </div>
+    </Card>
+  )
+}
 
 export default Restaurant

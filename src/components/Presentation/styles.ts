@@ -4,6 +4,7 @@ export const Banner = styled.div`
   display: flex;
   flex-direction: column;
   height: 280px;
+  background-size: cover;
 `
 
 export const Infor = styled.h2`

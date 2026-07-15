@@ -1,41 +1,29 @@
-import pizza from '../../assets/images/Pizza.png'
+import { useEffect, useState } from 'react'
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
 import Presentation from '../../components/Presentation'
 import ProductList from '../../components/ProductList'
-import Products from '../../models/Products'
+import { Restaurante } from '../Home'
+import { useParams } from 'react-router-dom'
 
-const Product: Products[] = [
-  {
-    id: 1,
-    title: 'Pizza Marguerita',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza
-  },
-  {
-    id: 2,
-    title: 'Pizza Marguerita',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza
-  },
-  {
-    id: 3,
-    title: 'Pizza Marguerita',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza
-  }
-]
+const Perfil = () => {
+  const { id } = useParams()
+  const [cardapio, setCardapio] = useState<Restaurante[]>([])
 
-const Perfil = () => (
-  <>
-    <Header />
-    <Presentation />
-    <ProductList product={Product} />
-    <Footer />
-  </>
-)
+  useEffect(() => {
+    fetch('https://api-ebac.vercel.app/api/efood/restaurantes')
+      .then((res) => res.json())
+      .then((res) => setCardapio(res))
+  }, [])
+
+  return (
+    <>
+      <Header />
+      <Presentation />
+      <ProductList product={cardapio} />
+      <Footer />
+    </>
+  )
+}
 
 export default Perfil

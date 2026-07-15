@@ -6,12 +6,15 @@ import { ButtonLink } from '../Button/styles'
 export const Card = styled.div`
   margin-bottom: 48px;
   position: relative;
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
 `
+
+export const Capa = styled.img`
+  display: block;
+  width: 472px;
+  height: 217px;
+  object-fit: cover;
+`
+
 export const Container = styled.div`
   padding: 8px;
   border-right: 1px solid ${Cores.CorPrimary};
