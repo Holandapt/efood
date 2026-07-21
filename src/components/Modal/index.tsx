@@ -7,11 +7,8 @@ import {
   ModalInfos
 } from './styles'
 import close from '../../assets/images/close.png'
-import pizza from '../../assets/images/Pizza.png'
 import Button from '../Button'
-import { CardapioItems, Restaurante } from '../../pages/Home'
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { CardapioItems } from '../../pages/Home'
 
 type Props = {
   isOpen: boolean

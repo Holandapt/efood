@@ -1,9 +1,5 @@
-import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
 import { Card, Container, Descricao, Titulo, CardHeader } from './styles'
-import { Restaurante } from '../../pages/Home'
 import Button from '../Button'
-import Modal from '../Modal'
 
 type Props = {
   foto: string
