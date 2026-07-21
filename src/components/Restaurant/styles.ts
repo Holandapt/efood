@@ -2,10 +2,12 @@ import styled from 'styled-components'
 import { TagContainer } from '../Tag/styles'
 import { Cores } from '../../styles'
 import { ButtonLink } from '../Button/styles'
+import { Link } from 'react-router-dom'
 
-export const Card = styled.div`
+export const Card = styled(Link)`
   margin-bottom: 48px;
   position: relative;
+  text-decoration: none;
 `
 
 export const Capa = styled.img`
