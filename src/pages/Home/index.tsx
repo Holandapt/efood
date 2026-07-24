@@ -1,7 +1,7 @@
 import Hero from '../../components/Hero'
 import Footer from '../../components/Footer'
 import RestaurantList from '../../components/RestaurantList'
-import { useEffect, useState } from 'react'
+import { useGetRestauranteQuery } from '../../service/api'
 
 export interface CardapioItems {
   foto: string
@@ -24,20 +24,17 @@ export type Restaurante = {
 }
 
 const Home = () => {
-  const [restaurante, setrestaurante] = useState<Restaurante[]>([])
+  const { data: restaurante } = useGetRestauranteQuery()
 
-  useEffect(() => {
-    fetch('https://api-ebac.vercel.app/api/efood/restaurantes')
-      .then((res) => res.json())
-      .then((res) => setrestaurante(res))
-  }, [])
-
-  return (
-    <>
-      <Hero />
-      <RestaurantList restaurantes={restaurante} />
-      <Footer />
-    </>
-  )
+  if (restaurante) {
+    return (
+      <>
+        <Hero />
+        <RestaurantList restaurantes={restaurante} />
+        <Footer />
+      </>
+    )
+  }
+  return <h4>Carregando...</h4>
 }
 export default Home

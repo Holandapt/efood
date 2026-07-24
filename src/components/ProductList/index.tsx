@@ -1,21 +1,16 @@
 import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import { Restaurante } from '../../pages/Home'
+import { useState } from 'react'
 import { List } from './styles'
 import Product from '../Product'
 import Modal from '../Modal'
+import { useGetCardapioQuery } from '../../service/api'
 
 const ProductList = () => {
   const { id } = useParams()
-  const [pratos, setPratos] = useState<Restaurante>()
+  const { data: cardapio } = useGetCardapioQuery(id!)
+
   const [modalEstaAberto, setModalEstaAberto] = useState(false)
   const [cardId, setCardId] = useState<number | null>(null)
-
-  useEffect(() => {
-    fetch(`https://api-ebac.vercel.app/api/efood/restaurantes/${id}`)
-      .then((res) => res.json())
-      .then((res) => setPratos(res))
-  }, [id])
 
   const clique = (id: number) => {
     setCardId(id)
@@ -23,9 +18,9 @@ const ProductList = () => {
   }
 
   const currentCardData =
-    pratos?.cardapio.find((card) => card.id === cardId) || null
+    cardapio?.cardapio.find((card) => card.id === cardId) || null
 
-  if (!pratos)
+  if (!cardapio)
     return (
       <>
         <h3>Carregando...</h3>
@@ -34,7 +29,7 @@ const ProductList = () => {
   return (
     <div className="container">
       <List>
-        {pratos.cardapio.map((item) => (
+        {cardapio.cardapio.map((item) => (
           <li key={item.id}>
             <Product
               descricao={item.descricao}
