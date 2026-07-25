@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Cores } from '../../styles'
-import { ButtonLink } from '../Button/styles'
+import { ButtonContainer, ButtonLink } from '../Button/styles'
 
 export const ModalContainer = styled.div`
   display: none;
@@ -79,11 +79,15 @@ export const ModalDescricao = styled.div`
     font-size: 14px;
   }
 
-  ${ButtonLink} {
+  ${ButtonContainer} {
     margin-top: 20px;
-    display: block;
-    width: 204px;
+    display: flex;
+    font-size: 14px;
+    width: 220px;
+    border: none;
+    padding: 4px 8px;
     color: ${Cores.CorPrimary};
     background-color: ${Cores.CorSecondary};
+    cursor: pointer;
   }
 `

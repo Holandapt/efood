@@ -1,3 +1,4 @@
+import { useDispatch, useSelector } from 'react-redux'
 import {
   ModalContainer,
   CloseModal,
@@ -6,9 +7,10 @@ import {
   ModalImage,
   ModalInfos
 } from './styles'
-import close from '../../assets/images/close.png'
+import Close from '../../assets/images/close.png'
 import Button from '../Button'
 import { CardapioItems } from '../../pages/Home'
+import { add, open } from '../../store/reducers/cart'
 
 type Props = {
   isOpen: boolean
@@ -16,7 +18,20 @@ type Props = {
   product: CardapioItems | null
 }
 
+export const formataPreco = (preco = 0) => {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(preco)
+}
+
 const Modal = ({ isOpen, onClose, product }: Props) => {
+  const dispatch = useDispatch()
+
+  const addToCart = () => {
+    ;(dispatch(add(product!), dispatch(open())), onClose())
+  }
+
   if (!isOpen) return null
   if (!product) return null
 
@@ -25,7 +40,7 @@ const Modal = ({ isOpen, onClose, product }: Props) => {
       <ModalContainer className={isOpen ? 'visivel' : ''}>
         <ModalContent className="container">
           <CloseModal>
-            <img onClick={onClose} src={close} alt="Icone para fechar Modal" />
+            <img onClick={onClose} src={Close} alt="Icone para fechar Modal" />
           </CloseModal>
           <ModalInfos>
             <ModalImage src={product.foto} alt="Imagem do produto" />
@@ -33,8 +48,12 @@ const Modal = ({ isOpen, onClose, product }: Props) => {
               <h2>{product.nome}</h2>
               <p> {product.descricao}</p>
               <span>Serve de: {product.porcao}</span>
-              <Button title="Adicionar ao carrinho" type="link">
-                {`Adicionar ao carrinho - R$ ${product.preco}`}
+              <Button
+                onClinck={addToCart}
+                title="Adicionar ao carrinho"
+                type="button"
+              >
+                {`Adicionar ao carrinho - ${formataPreco(product.preco)}`}
               </Button>
             </ModalDescricao>
           </ModalInfos>

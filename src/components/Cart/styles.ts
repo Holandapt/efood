@@ -9,9 +9,13 @@ export const CartContaine = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
+  display: none;
   justify-content: flex-end;
   z-index: 1;
+
+  &.is-open {
+    display: flex;
+  }
 `
 
 export const Overlay = styled.div`
@@ -36,6 +40,7 @@ export const Sidebar = styled.aside`
     background-color: ${Cores.CorSecondary};
     color: ${Cores.CorPrimary};
     border: none;
+    cursor: pointer;
   }
 `
 export const CartItem = styled.div`
@@ -48,6 +53,7 @@ export const CartItem = styled.div`
   padding: 8px 8px 0px;
   color: ${Cores.CorPrimary};
   margin-bottom: 16px;
+
   img {
     width: 80px;
     height: 80px;
@@ -85,11 +91,22 @@ export const CartItem = styled.div`
 export const Details = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 40px;
+  align-items: center;
   margin-bottom: 16px;
   color: ${Cores.CorSecondary};
   font-size: 14px;
   font-weight: bold;
+
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+    align-items: center;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 22px;
+  }
 `
 
 export const Total = styled.div``
