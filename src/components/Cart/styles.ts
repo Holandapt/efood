@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import reciclagem from '../../assets/images/lixeira-de-reciclagem.png'
-import { Cores } from '../../styles'
+import { breakpoints, Cores } from '../../styles'
 import { ButtonContainer } from '../Button/styles'
 
 export const CartContaine = styled.div`
@@ -35,6 +35,11 @@ export const Sidebar = styled.aside`
   max-width: 360px;
   width: 100%;
 
+  @media (max-width: ${breakpoints.desktop}) {
+    width: 100%;
+    padding: 90px 8px 0 8px;
+  }
+
   ${ButtonContainer} {
     width: 100%;
     background-color: ${Cores.CorSecondary};
@@ -53,6 +58,9 @@ export const CartItem = styled.div`
   padding: 8px 8px 0px;
   color: ${Cores.CorPrimary};
   margin-bottom: 16px;
+  @media (max-width: ${breakpoints.desktop}) {
+    max-width: 100%;
+  }
 
   img {
     width: 80px;
@@ -96,6 +104,10 @@ export const Details = styled.div`
   color: ${Cores.CorSecondary};
   font-size: 14px;
   font-weight: bold;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    margin-top: 80px;
+  }
 
   h3 {
     font-size: 18px;

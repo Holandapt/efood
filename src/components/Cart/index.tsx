@@ -1,9 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux'
-import pizza from '../../assets/images/Pizza.png'
 import Button from '../Button'
 import { CartContaine, CartItem, Details, Overlay, Sidebar } from './styles'
 import { RootReducer } from '../../store/index'
-import { close } from '../../store/reducers/cart'
+import { close, remove } from '../../store/reducers/cart'
 import { formataPreco } from '../Modal'
 
 const Cart = () => {
@@ -14,11 +13,15 @@ const Cart = () => {
     dispatch(close())
   }
 
-  // const getTotalPrice = () => {
-  //   return pratos.reduce((acumulador, valorAtual) => {
-  //     return (acumulador += valorAtual.preco!)
-  //   })
-  // }
+  const removeItem = (id: number) => {
+    dispatch(remove(id))
+  }
+
+  const getTotalPrice = () => {
+    return pratos.reduce((acumulador, valorAtual) => {
+      return (acumulador += valorAtual.preco!)
+    }, 0)
+  }
 
   return (
     <CartContaine className={isOpen ? 'is-open' : ''}>
@@ -32,12 +35,12 @@ const Cart = () => {
                 <h3>{item.nome}</h3>
                 <p>{formataPreco(item.preco)}</p>
               </div>
-              <button type="button" />
+              <button onClick={() => removeItem(item.id)} type="button" />
             </CartItem>
           ))}
           <Details>
             <p>Valor total</p>
-            <span>R$ 182,70</span>
+            <span>{formataPreco(getTotalPrice())}</span>
           </Details>
           <Button type="button" title="Clique aqui para seguir com a compra">
             Continuar com a entrega

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { TagContainer } from '../Tag/styles'
-import { Cores } from '../../styles'
+import { breakpoints, Cores } from '../../styles'
 import { ButtonLink } from '../Button/styles'
 import { Link } from 'react-router-dom'
 
@@ -15,6 +15,9 @@ export const Capa = styled.img`
   width: 472px;
   height: 217px;
   object-fit: cover;
+  @media (max-width: ${breakpoints.desktop}) {
+    width: 100%;
+  }
 `
 
 export const Container = styled.div`

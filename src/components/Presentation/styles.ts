@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { breakpoints } from '../../styles'
 
 export const Banner = styled.div`
   display: flex;
@@ -20,4 +21,7 @@ export const Titulo = styled.h1`
   font-weight: 900;
   color: #ffff;
   margin-top: 156px;
+  @media (max-width: ${breakpoints.desktop}) {
+    margin-top: 140px;
+  }
 `

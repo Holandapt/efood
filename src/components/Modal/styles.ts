@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
-import { ButtonContainer, ButtonLink } from '../Button/styles'
+import { breakpoints, Cores } from '../../styles'
+import { ButtonContainer } from '../Button/styles'
 
 export const ModalContainer = styled.div`
   display: none;
@@ -15,6 +15,10 @@ export const ModalContainer = styled.div`
 
   &.visivel {
     display: flex;
+    @media (max-width: ${breakpoints.desktop}) {
+      width: 100%;
+      margin-top: 10px;
+    }
   }
 
   .overlay {
@@ -32,6 +36,13 @@ export const ModalContent = styled.div`
   position: relative;
   z-index: 1;
   background-color: ${Cores.CorPrimary};
+
+  @media (max-width: ${breakpoints.desktop}) {
+    width: 90%;
+    height: auto;
+    align-items: center;
+    margin-top: 80px;
+  }
 `
 export const CloseModal = styled.div`
   display: flex;
@@ -47,12 +58,21 @@ export const ModalInfos = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 16px;
+  @media (max-width: ${breakpoints.desktop}) {
+    display: block;
+    align-items: center;
+  }
 `
+
 export const ModalImage = styled.img`
   height: 280px;
   width: 280px;
   object-fit: cover;
   margin-left: 16px;
+  @media (max-width: ${breakpoints.desktop}) {
+    height: 100%;
+    margin-left: 10px;
+  }
 `
 export const ModalDescricao = styled.div`
   display: flex;
@@ -89,5 +109,13 @@ export const ModalDescricao = styled.div`
     color: ${Cores.CorPrimary};
     background-color: ${Cores.CorSecondary};
     cursor: pointer;
+  }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    margin-left: 10px;
+
+    h2 {
+      margin-top: 2px;
+    }
   }
 `
