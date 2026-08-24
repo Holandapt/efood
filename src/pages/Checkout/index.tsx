@@ -13,13 +13,16 @@ import Loader from '../../components/Loader'
 import Home from '../Home'
 import { clear } from '../../store/reducers/cart'
 import { RootReducer } from '../../store'
+import { getTotalPrice, parseToBrl } from '../../utils'
 
 const Checkout = () => {
   const navigate = useNavigate()
   const [payment, setPayment] = useState(false)
   const [purchase, { isSuccess, data, isLoading }] = usePurchaseMutation()
   const { pratos } = useSelector((state: RootReducer) => state.cart)
+  const [total, setTotal] = useState(0)
   const dispatch = useDispatch()
+  const totalPrice = getTotalPrice(pratos)
 
   const form = useFormik({
     initialValues: {
@@ -117,6 +120,12 @@ const Checkout = () => {
   }
 
   useEffect(() => {
+    if (totalPrice > 0) {
+      setTotal(totalPrice)
+    }
+  }, [totalPrice])
+
+  useEffect(() => {
     if (isSuccess) {
       dispatch(clear())
     }
@@ -158,7 +167,7 @@ const Checkout = () => {
         <form onSubmit={form.handleSubmit}>
           {payment ? (
             <>
-              <Card title="Pagamento - Valor a pagar R$">
+              <Card title={`Pagamento - Valor a pagar ${parseToBrl(total)}`}>
                 <S.Check>
                   <S.InputGroup>
                     <label htmlFor="name">Nome no cartão</label>

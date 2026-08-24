@@ -17,3 +17,9 @@ declare type Restaurante = {
   capa: string
   cardapio: CardapioItems[]
 }
+
+declare type CartState = {
+  items: Restaurante[]
+  isOpen: boolean
+  pratos: CardapioItems[]
+}
