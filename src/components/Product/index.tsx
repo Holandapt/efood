@@ -1,4 +1,4 @@
-import { Card, Container, Descricao, Titulo, CardHeader } from './styles'
+import * as S from './styles'
 import Button from '../Button'
 
 type Props = {
@@ -13,22 +13,22 @@ type Props = {
 
 const Product = ({ foto, descricao, id, nome, onOpen }: Props) => {
   // Função que define o tamanho da descrição aprensentada
-  const getDescricao = (descricao: string) => {
+  const getDescription = (descricao: string) => {
     if (descricao.length > 179) {
-      return descricao.slice(0, 176) + '...'
+      return descricao.slice(0, 169) + '...'
     }
     return descricao
   }
 
   return (
     <>
-      <Card key={id}>
-        <Container>
+      <S.Card key={id}>
+        <S.Container>
           <img src={foto} alt={nome} />
-          <CardHeader>
-            <Titulo>{nome}</Titulo>
-          </CardHeader>
-          <Descricao>{getDescricao(descricao)}</Descricao>
+          <S.CardHeader>
+            <S.Title>{nome}</S.Title>
+          </S.CardHeader>
+          <S.Description>{getDescription(descricao)}</S.Description>
           <Button
             onClinck={onOpen}
             type="button"
@@ -36,8 +36,8 @@ const Product = ({ foto, descricao, id, nome, onOpen }: Props) => {
           >
             Adicionar ao carrinho
           </Button>
-        </Container>
-      </Card>
+        </S.Container>
+      </S.Card>
     </>
   )
 }

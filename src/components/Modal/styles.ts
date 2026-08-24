@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { breakpoints, Cores } from '../../styles'
+import { breakpoints, Colors } from '../../styles'
 import { ButtonContainer } from '../Button/styles'
 
 export const ModalContainer = styled.div`
@@ -35,7 +35,7 @@ export const ModalContent = styled.div`
   max-width: 1024px;
   position: relative;
   z-index: 1;
-  background-color: ${Cores.CorPrimary};
+  background-color: ${Colors.primaryColor};
 
   @media (max-width: ${breakpoints.desktop}) {
     width: 90%;
@@ -74,7 +74,7 @@ export const ModalImage = styled.img`
     margin-left: 10px;
   }
 `
-export const ModalDescricao = styled.div`
+export const ModalDescription = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -106,8 +106,8 @@ export const ModalDescricao = styled.div`
     width: 220px;
     border: none;
     padding: 4px 8px;
-    color: ${Cores.CorPrimary};
-    background-color: ${Cores.CorSecondary};
+    color: ${Colors.primaryColor};
+    background-color: ${Colors.secondaryColor};
     cursor: pointer;
   }
 

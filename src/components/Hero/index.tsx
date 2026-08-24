@@ -1,16 +1,16 @@
-import { Fundo, Logo, Subtitulo } from './styles'
-import imgFundo from '../../assets/images/fundo.png'
+import * as S from './styles'
+import imgBckg from '../../assets/images/fundo.png'
 import logo from '../../assets/images/logo.png'
 
 const Hero = () => (
-  <Fundo style={{ backgroundImage: `url(${imgFundo})` }}>
-    <Logo src={logo} alt="Logo" />
+  <S.Background style={{ backgroundImage: `url(${imgBckg})` }}>
+    <S.Logo src={logo} alt="Logo" />
     <div className="container">
-      <Subtitulo>
+      <S.Subtitle>
         Viva experiências gastronômicas no conforto da sua casa
-      </Subtitulo>
+      </S.Subtitle>
     </div>
-  </Fundo>
+  </S.Background>
 )
 
 export default Hero

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
+import { Colors } from '../../styles'
 
-export const Fundo = styled.div`
+export const Background = styled.div`
   max-width: 100%;
   height: 384px;
   text-align: center;
@@ -18,9 +18,9 @@ export const Logo = styled.img`
   margin-bottom: 150px;
 `
 
-export const Subtitulo = styled.h2`
+export const Subtitle = styled.h2`
   font-size: 36px;
   text-align: center;
-  color: ${Cores.CorPrimary};
+  color: ${Colors.primaryColor};
   font-weight: 900;
 `

@@ -1,28 +1,14 @@
 import { useDispatch } from 'react-redux'
-import {
-  ModalContainer,
-  CloseModal,
-  ModalContent,
-  ModalDescricao,
-  ModalImage,
-  ModalInfos
-} from './styles'
+import * as S from './styles'
 import Close from '../../assets/images/close.png'
 import Button from '../Button'
-import { CardapioItems } from '../../pages/Home'
 import { add, open } from '../../store/reducers/cart'
+import { parseToBrl } from '../../utils'
 
 type Props = {
   isOpen: boolean
   onClose: () => void
   product: CardapioItems | null
-}
-
-export const formataPreco = (preco = 0) => {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(preco)
 }
 
 const Modal = ({ isOpen, onClose, product }: Props) => {
@@ -37,14 +23,14 @@ const Modal = ({ isOpen, onClose, product }: Props) => {
 
   return (
     <>
-      <ModalContainer className={isOpen ? 'visivel' : ''}>
-        <ModalContent className="container">
-          <CloseModal>
+      <S.ModalContainer className={isOpen ? 'visivel' : ''}>
+        <S.ModalContent className="container">
+          <S.CloseModal>
             <img onClick={onClose} src={Close} alt="Icone para fechar Modal" />
-          </CloseModal>
-          <ModalInfos>
-            <ModalImage src={product.foto} alt="Imagem do produto" />
-            <ModalDescricao>
+          </S.CloseModal>
+          <S.ModalInfos>
+            <S.ModalImage src={product.foto} alt="Imagem do produto" />
+            <S.ModalDescription>
               <h2>{product.nome}</h2>
               <p> {product.descricao}</p>
               <span>Serve de: {product.porcao}</span>
@@ -53,13 +39,13 @@ const Modal = ({ isOpen, onClose, product }: Props) => {
                 title="Adicionar ao carrinho"
                 type="button"
               >
-                {`Adicionar ao carrinho - ${formataPreco(product.preco)}`}
+                {`Adicionar ao carrinho - ${parseToBrl(product.preco)}`}
               </Button>
-            </ModalDescricao>
-          </ModalInfos>
-        </ModalContent>
+            </S.ModalDescription>
+          </S.ModalInfos>
+        </S.ModalContent>
         <div className="overlay" onClick={() => onClose()}></div>
-      </ModalContainer>
+      </S.ModalContainer>
     </>
   )
 }

@@ -2,26 +2,7 @@ import Hero from '../../components/Hero'
 import Footer from '../../components/Footer'
 import RestaurantList from '../../components/RestaurantList'
 import { useGetRestauranteQuery } from '../../service/api'
-
-export interface CardapioItems {
-  foto: string
-  preco: number
-  id: number
-  nome: string
-  descricao: string
-  porcao: string
-}
-
-export type Restaurante = {
-  id: number
-  titulo: string
-  destacado?: string
-  tipo: string
-  avaliacao: string
-  descricao: string
-  capa: string
-  cardapio: CardapioItems[]
-}
+import Loader from '../../components/Loader'
 
 const Home = () => {
   const { data: restaurante } = useGetRestauranteQuery()
@@ -35,6 +16,6 @@ const Home = () => {
       </>
     )
   }
-  return <h4>Carregando...</h4>
+  return <Loader />
 }
 export default Home

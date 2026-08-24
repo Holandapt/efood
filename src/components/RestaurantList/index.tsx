@@ -1,5 +1,4 @@
 import { List } from './styles'
-import { Restaurante } from '../../pages/Home'
 import Restaurant from '../Restaurant'
 
 export type Props = {

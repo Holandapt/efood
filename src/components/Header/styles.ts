@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Logo } from '../Hero/styles'
 import { ButtonLink } from '../Button/styles'
-import { breakpoints, Cores } from '../../styles'
+import { breakpoints, Colors } from '../../styles'
 import imgFundo from '../../assets/images/fundo.png'
 
 export const Menu = styled.div`
@@ -18,7 +18,7 @@ export const Menu = styled.div`
 
   ${ButtonLink} {
     background-color: transparent;
-    color: ${Cores.CorPrimary};
+    color: ${Colors.primaryColor};
     font-size: 18px;
     font-weight: 900;
   }

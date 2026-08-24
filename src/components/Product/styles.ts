@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { TagContainer } from '../Tag/styles'
-import { Cores } from '../../styles'
+import { Colors } from '../../styles'
 import { ButtonContainer } from '../Button/styles'
 
 export const Card = styled.div`
@@ -9,7 +9,7 @@ export const Card = styled.div`
   justify-content: space-between;
   margin-bottom: 48px;
   position: relative;
-  background-color: ${Cores.CorPrimary};
+  background-color: ${Colors.primaryColor};
 `
 export const Container = styled.div`
   padding: 8px;
@@ -27,8 +27,8 @@ export const Container = styled.div`
     margin-top: auto;
     display: inline-block;
     text-align: center;
-    background-color: ${Cores.CorSecondary};
-    color: ${Cores.CorPrimary};
+    background-color: ${Colors.secondaryColor};
+    color: ${Colors.primaryColor};
     width: 100%;
     padding: 4px;
     border: none;
@@ -36,17 +36,17 @@ export const Container = styled.div`
   }
 `
 
-export const Titulo = styled.h3`
+export const Title = styled.h3`
   margin-top: 8px;
   font-size: 16px;
   font-weight: bold;
-  color: ${Cores.CorSecondary};
+  color: ${Colors.secondaryColor};
 `
 
-export const Descricao = styled.p`
+export const Description = styled.p`
   font-size: 14px;
   line-height: 22px;
-  color: ${Cores.CorSecondary};
+  color: ${Colors.secondaryColor};
   margin-bottom: 16px;
 `
 

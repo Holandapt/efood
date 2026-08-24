@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
+import { Colors } from '../../styles'
 
 export const Container = styled.footer`
   display: block;
   text-align: center;
-  background-color: ${Cores.CorSecondary};
+  background-color: ${Colors.secondaryColor};
   height: 298px;
 `
 export const Logo = styled.img`
@@ -21,6 +21,6 @@ export const RedeSocial = styled.a`
 `
 export const TextoFooter = styled.p`
   font-size: 10px;
-  color: ${Cores.CorPrimary};
+  color: ${Colors.primaryColor};
   margin: 0 auto;
 `

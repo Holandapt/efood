@@ -7,20 +7,20 @@ import { Container, Logo, Redes, RedeSocial, TextoFooter } from './styles'
 const Footer = () => (
   <Container>
     <div className="container">
-      <Logo src={logo} alt="" />
+      <Logo src={logo} alt="Logotipo" />
       <Redes>
         <li>
-          <RedeSocial href="#">
+          <RedeSocial href="#" title="Instagram">
             <img src={insta} alt="" />
           </RedeSocial>
         </li>
         <li>
-          <RedeSocial href="#">
+          <RedeSocial href="#" title="Facebook">
             <img src={face} alt="" />
           </RedeSocial>
         </li>
         <li>
-          <RedeSocial href="#">
+          <RedeSocial href="#" title="Twitter">
             <img src={twt} alt="" />
           </RedeSocial>
         </li>

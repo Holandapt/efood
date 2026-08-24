@@ -16,7 +16,7 @@ export const Infor = styled.h2`
   font-weight: 100;
 `
 
-export const Titulo = styled.h1`
+export const Title = styled.h1`
   font-size: 32px;
   font-weight: 900;
   color: #ffff;

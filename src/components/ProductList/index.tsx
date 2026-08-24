@@ -4,6 +4,7 @@ import { List } from './styles'
 import Product from '../Product'
 import Modal from '../Modal'
 import { useGetCardapioQuery } from '../../service/api'
+import Loader from '../Loader'
 
 const ProductList = () => {
   const { id } = useParams()
@@ -23,7 +24,7 @@ const ProductList = () => {
   if (!cardapio)
     return (
       <>
-        <h3>Carregando...</h3>
+        <Loader />
       </>
     )
   return (

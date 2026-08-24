@@ -1,8 +1,8 @@
 import { createGlobalStyle } from 'styled-components'
 
-export const Cores = {
-  CorPrimary: '#E66767',
-  CorSecondary: '#FFEBD9'
+export const Colors = {
+  primaryColor: '#E66767',
+  secondaryColor: '#FFEBD9'
 }
 
 export const breakpoints = {

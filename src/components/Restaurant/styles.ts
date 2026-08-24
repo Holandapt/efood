@@ -1,16 +1,17 @@
 import styled from 'styled-components'
 import { TagContainer } from '../Tag/styles'
-import { breakpoints, Cores } from '../../styles'
+import { breakpoints, Colors } from '../../styles'
 import { ButtonLink } from '../Button/styles'
 import { Link } from 'react-router-dom'
 
 export const Card = styled(Link)`
+  height: 100%;
   margin-bottom: 48px;
   position: relative;
   text-decoration: none;
 `
 
-export const Capa = styled.img`
+export const Cover = styled.img`
   display: block;
   width: 472px;
   height: 217px;
@@ -22,9 +23,9 @@ export const Capa = styled.img`
 
 export const Container = styled.div`
   padding: 8px;
-  border-right: 1px solid ${Cores.CorPrimary};
-  border-left: 1px solid ${Cores.CorPrimary};
-  border-bottom: 1px solid ${Cores.CorPrimary};
+  border-right: 1px solid ${Colors.primaryColor};
+  border-left: 1px solid ${Colors.primaryColor};
+  border-bottom: 1px solid ${Colors.primaryColor};
   ${TagContainer} {
     margin-right: 8px;
   }
@@ -40,16 +41,16 @@ export const Infos = styled.div`
   right: 16px;
 `
 
-export const Titulo = styled.h3`
+export const Title = styled.h3`
   font-size: 18px;
   font-weight: bold;
-  color: ${Cores.CorPrimary};
+  color: ${Colors.primaryColor};
 `
 
-export const Descricao = styled.p`
+export const Description = styled.p`
   font-size: 14px;
   line-height: 22px;
-  color: ${Cores.CorPrimary};
+  color: ${Colors.primaryColor};
   margin-bottom: 16px;
 `
 
@@ -71,5 +72,5 @@ export const Nota = styled.span`
   font-weight: bold;
   font-size: 18px;
   text-align: center;
-  color: ${Cores.CorPrimary};
+  color: ${Colors.primaryColor};
 `

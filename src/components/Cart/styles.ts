@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import reciclagem from '../../assets/images/lixeira-de-reciclagem.png'
-import { breakpoints, Cores } from '../../styles'
+import { breakpoints, Colors } from '../../styles'
 import { ButtonContainer } from '../Button/styles'
 
 export const CartContaine = styled.div`
@@ -17,7 +17,6 @@ export const CartContaine = styled.div`
     display: flex;
   }
 `
-
 export const Overlay = styled.div`
   position: absolute;
   top: 0;
@@ -29,37 +28,39 @@ export const Overlay = styled.div`
 `
 
 export const Sidebar = styled.aside`
-  background-color: ${Cores.CorPrimary};
+  background-color: ${Colors.primaryColor};
   z-index: 1;
   padding: 32px 8px 0 8px;
   max-width: 360px;
   width: 100%;
 
-  @media (max-width: ${breakpoints.desktop}) {
-    width: 100%;
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 50%;
     padding: 90px 8px 0 8px;
   }
 
   ${ButtonContainer} {
     width: 100%;
-    background-color: ${Cores.CorSecondary};
-    color: ${Cores.CorPrimary};
+    background-color: ${Colors.secondaryColor};
+    color: ${Colors.primaryColor};
     border: none;
     cursor: pointer;
   }
 `
 export const CartItem = styled.div`
   display: flex;
-  background-color: ${Cores.CorSecondary};
-  padding: 8px 0;
+  background-color: ${Colors.secondaryColor};
   position: relative;
   height: 100px;
   width: 344px;
   padding: 8px 8px 0px;
-  color: ${Cores.CorPrimary};
+  color: ${Colors.primaryColor};
   margin-bottom: 16px;
-  @media (max-width: ${breakpoints.desktop}) {
-    max-width: 100%;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 90%;
+    display: block;
+    height: auto;
   }
 
   img {
@@ -67,6 +68,11 @@ export const CartItem = styled.div`
     height: 80px;
     margin-right: 8px;
     object-fit: cover;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      width: 100%;
+      margin-bottom: 8px;
+    }
   }
 
   h3 {
@@ -101,7 +107,7 @@ export const Details = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
-  color: ${Cores.CorSecondary};
+  color: ${Colors.secondaryColor};
   font-size: 14px;
   font-weight: bold;
 
@@ -120,5 +126,8 @@ export const Details = styled.div`
     line-height: 22px;
   }
 `
-
-export const Total = styled.div``
+export const CartBox = styled.div`
+  height: 390px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+`
