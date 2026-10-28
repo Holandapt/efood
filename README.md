@@ -1,46 +1,60 @@
-# Getting Started with Create React App
+# 🍽️ Efood - Plataforma de Delivery
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Uma aplicação web moderna e responsiva de e-commerce e delivery de restaurantes, desenvolvida com React e TypeScript.
 
-## Available Scripts
+![Vercel Status](https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Live Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Acede ao site publicado e testa a aplicação em tempo real:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+👉 **[Aceder ao Efood na Vercel](https://efood-lh.vercel.app/)** 👈
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📌 Sobre o Projeto
 
-### `npm run build`
+O **Efood** é uma plataforma que simula um serviço de entrega de refeições online. O utilizador pode explorar uma lista de restaurantes destacados, visualizar cardápios detalhados, gerir um carrinho de compras interativo e realizar o fluxo completo de checkout e pagamento.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### ✨ Funcionalidades Principais:
+- 🏢 **Listagem de Restaurantes:** Apresentação de estabelecimentos com avaliações, categorias e destaques.
+- 🍕 **Cardápio Interativo:** Modal com fotos, descrições e porções de cada prato.
+- 🛒 **Carrinho de Compras:** Adição/remoção dinâmica de produtos com cálculo automático do total.
+- 💳 **Checkout de Pagamento:** Formulários validados para dados de entrega e cartão de crédito.
+- 📱 **Design Responsivo:** Interface otimizada para telemóveis, tablets e computadores.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠️ Tecnologias Utilizadas
 
-### `npm run eject`
+- **Front-end:** [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/)
+- **Estilização:** Styled Components
+- **Gerenciamento de Estado:** Redux Toolkit / React Context
+- **Qualidade de Código:** ESLint, Prettier, EditorConfig
+- **Hospedagem / Deploy:** [Vercel](https://vercel.app/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 💻 Como Executar o Projeto Localmente
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Pré-requisitos
+Certifica-te de ter o [Node.js](https://nodejs.org/) instalado na tua máquina.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+# 1. Clona o repositório
+$ git clone [https://github.com/Holandapt/efood.git](https://github.com/Holandapt/efood.git)
 
-## Learn More
+# 2. Entra na pasta do projeto
+$ cd efood
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# 3. Instala as dependências
+$ npm install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# 4. Inicia o servidor de desenvolvimento
+$ npm start
+# ou
+$ npm run dev
